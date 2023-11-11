@@ -1,0 +1,22 @@
+server.port: 8080
+spring:
+  application.name: 'ms-forms'
+  data:
+    mongodb:
+      uri: mongodb://192.168.0.3:27017/ms_forms_db
+      authentication-database: admin
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: http://id:8080/oauth2/jwks
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka:8761/eureka/
+ms.users:
+  details:
+    developer:
+      password: password
+      authorities: users.write
+      enabled: true
